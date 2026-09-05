@@ -3,291 +3,351 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mystic China — Custom China Travel Itineraries for Foreign Travelers</title>
-<meta name="description" content="Personalized China travel itineraries planned by a local expert. Visa help, mobile payment, high-speed rail, handpicked hotels, tickets and insider tips. Plans from $39.">
+<title>Magic China — Custom China Travel Itineraries for Foreign Travelers</title>
+<meta name="description" content="Personalized China travel itineraries planned by a local expert. Great Wall, pandas, Li River and more. Handpicked hotels, tickets and insider tips. Plans from $39.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#0e0b12;
-    --bg2:#161019;
-    --card:#1c1523;
-    --ink:#f4eef2;
-    --muted:#b7a9bd;
-    --line:rgba(255,255,255,.08);
-    --gold:#d4a44a;
-    --gold-soft:#e7c988;
-    --red:#c8384a;
-    --red-soft:#e05666;
+    --bg:#faf6ec;
+    --surface:#ffffff;
+    --ink:#2a2113;
+    --muted:#786f60;
+    --line:#ece0cb;
+    --primary:#e0a50e;      /* Forbidden City glazed-tile yellow */
+    --primary-d:#b8850a;
+    --gold-deep:#9a6b12;    /* readable gold for small text */
+    --accent:#9c2b28;       /* lacquer red accent */
+    --wall:#9a2624;         /* Forbidden City wall red */
+    --wall-d:#7d1c1b;
+    --shadow:0 14px 40px -18px rgba(80,55,20,.35);
     --radius:16px;
-    --max:1120px;
+    --max:1160px;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
-  body{
-    background:var(--bg);
-    color:var(--ink);
-    font-family:'Inter',system-ui,-apple-system,"Segoe UI",Roboto,"PingFang SC","Microsoft YaHei",sans-serif;
-    line-height:1.65;
-    -webkit-font-smoothing:antialiased;
-  }
+  body{background:var(--bg);color:var(--ink);font-family:'Inter',system-ui,-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased}
   img{max-width:100%;display:block}
   a{color:inherit;text-decoration:none}
   .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
   .serif{font-family:'Cormorant Garamond',Georgia,serif}
-  .gold{color:var(--gold-soft)}
 
-  /* Buttons */
-  .btn{
-    display:inline-flex;align-items:center;gap:.5em;
-    padding:14px 26px;border-radius:999px;font-weight:600;font-size:16px;
-    cursor:pointer;border:1px solid transparent;transition:.2s transform,.2s box-shadow,.2s background;
-  }
+  .btn{display:inline-flex;align-items:center;gap:.5em;padding:14px 26px;border-radius:999px;font-weight:700;font-size:16px;cursor:pointer;border:1px solid transparent;transition:.2s transform,.2s box-shadow,.2s background;white-space:nowrap}
   .btn:hover{transform:translateY(-2px)}
-  .btn-primary{background:linear-gradient(135deg,var(--red),var(--red-soft));color:#fff;box-shadow:0 10px 30px -8px rgba(200,56,74,.6)}
-  .btn-gold{background:linear-gradient(135deg,var(--gold),var(--gold-soft));color:#2a1c05;box-shadow:0 10px 30px -8px rgba(212,164,74,.55)}
-  .btn-ghost{border-color:var(--line);color:var(--ink);background:rgba(255,255,255,.02)}
-  .btn-ghost:hover{background:rgba(255,255,255,.06)}
+  .btn-primary{background:var(--primary);color:#2a2113;box-shadow:0 10px 26px -8px rgba(224,165,14,.7)}
+  .btn-primary:hover{background:var(--primary-d)}
+  .btn-ghost{border-color:var(--line);color:var(--ink);background:var(--surface)}
+  .btn-ghost:hover{border-color:var(--primary);color:var(--primary-d)}
+  .btn-dark{background:var(--ink);color:#fff}
+  .btn-dark:hover{background:#3a2f1c}
+  .btn-outline-light{border-color:rgba(255,255,255,.75);color:#fff;background:rgba(255,255,255,.08);backdrop-filter:blur(4px)}
+  .btn-outline-light:hover{background:rgba(255,255,255,.18)}
 
-  /* Header */
-  header{position:sticky;top:0;z-index:50;background:rgba(14,11,18,.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
-  .nav{display:flex;align-items:center;justify-content:space-between;height:68px}
-  .brand{display:flex;align-items:center;gap:12px;font-weight:700;font-size:20px;letter-spacing:.3px}
-  .brand .seal{
-    width:38px;height:38px;border-radius:10px;flex:none;
-    background:linear-gradient(135deg,var(--red),#8e1f2e);
-    display:grid;place-items:center;font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--gold-soft);
-    border:1px solid rgba(212,164,74,.5);
-  }
-  .brand small{display:block;font-size:11px;font-weight:500;letter-spacing:2px;color:var(--muted);text-transform:uppercase}
-  .nav-links{display:flex;gap:28px;align-items:center}
-  .nav-links a{color:var(--muted);font-size:15px;font-weight:500}
-  .nav-links a:hover{color:var(--ink)}
-  .nav .btn{padding:10px 20px;font-size:15px}
-  @media(max-width:820px){.nav-links a:not(.btn){display:none}}
+  /* WORDMARK (site name, no logo, not a bar) */
+  .wordmark{position:absolute;top:26px;left:0;right:0;z-index:20;text-align:center;color:#fff;font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:700;letter-spacing:4px;text-transform:uppercase;text-shadow:0 2px 16px rgba(0,0,0,.5);pointer-events:none}
+  .wordmark span{color:var(--primary)}
 
-  /* Hero */
-  .hero{position:relative;overflow:hidden;padding:90px 0 80px;text-align:center}
-  .hero::before{
-    content:"";position:absolute;inset:0;z-index:0;
-    background:
-      radial-gradient(60% 50% at 50% 0%,rgba(200,56,74,.22),transparent 70%),
-      radial-gradient(40% 40% at 80% 30%,rgba(212,164,74,.14),transparent 70%);
-  }
-  .hero .wrap{position:relative;z-index:1}
-  .eyebrow{
-    display:inline-block;padding:7px 16px;border:1px solid rgba(212,164,74,.35);
-    border-radius:999px;color:var(--gold-soft);font-size:13px;letter-spacing:2px;text-transform:uppercase;margin-bottom:26px;
-    background:rgba(212,164,74,.06);
-  }
-  .hero h1{font-size:clamp(40px,7vw,76px);line-height:1.05;font-weight:700;letter-spacing:.5px}
-  .hero h1 .sub{display:block;font-size:clamp(17px,2.4vw,22px);font-family:'Inter',sans-serif;font-weight:500;color:var(--muted);letter-spacing:3px;text-transform:uppercase;margin-top:18px}
-  .hero p.lead{max-width:640px;margin:26px auto 36px;font-size:19px;color:var(--muted)}
-  .hero-cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
-  .trust-row{margin-top:40px;display:flex;gap:28px;justify-content:center;flex-wrap:wrap;color:var(--muted);font-size:14px}
-  .trust-row span{display:inline-flex;align-items:center;gap:8px}
-  .trust-row b{color:var(--gold-soft)}
+  /* HERO CAROUSEL */
+  .carousel{position:relative;height:70vh;min-height:480px;overflow:hidden;background:#2a2113}
+  .slides{display:flex;height:100%;transition:transform .7s cubic-bezier(.6,.05,.2,1)}
+  .slide{position:relative;min-width:100%;height:100%;display:flex;align-items:flex-end;
+    background-size:cover;background-position:center;color:#fff}
+  .slide::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,13,3,.35) 0%,rgba(20,13,3,.15) 40%,rgba(20,13,3,.82) 100%)}
+  .slide .inner{position:relative;z-index:2;max-width:var(--max);margin:0 auto;width:100%;padding:0 48px 84px;text-align:center}
+  .slide .cat{display:inline-flex;flex-direction:column;align-items:center;gap:3px;margin-bottom:20px}
+  .slide .cat .en{background:var(--primary);color:#2a2113;font-size:13px;font-weight:800;letter-spacing:2px;text-transform:uppercase;padding:8px 18px;border-radius:999px}
+  .slide .cat .zh{font-family:'Cormorant Garamond',serif;font-size:15px;letter-spacing:6px;color:#fff;opacity:.9;margin-top:8px}
+  .slide h2{font-family:'Cormorant Garamond',serif;font-size:clamp(38px,6.5vw,74px);line-height:1.04;font-weight:700;text-shadow:0 2px 30px rgba(0,0,0,.45)}
+  .slide .meta{margin:16px 0 6px;font-size:16px;font-weight:600;letter-spacing:1px;color:#fff}
+  .slide .meta b{color:var(--primary)}
+  .slide p.desc{max-width:600px;margin:8px auto 26px;font-size:18px;color:rgba(255,255,255,.92)}
+  .slide .scta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
 
-  /* Sections */
-  section.block{padding:80px 0}
-  .section-head{text-align:center;max-width:620px;margin:0 auto 52px}
-  .section-head .tag{color:var(--gold-soft);font-size:13px;letter-spacing:3px;text-transform:uppercase;font-weight:600}
-  .section-head h2{font-size:clamp(30px,4.5vw,46px);margin:12px 0;font-weight:700}
+  .cbtn{position:absolute;top:50%;transform:translateY(-50%);z-index:15;width:52px;height:52px;border-radius:50%;
+    background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.4);backdrop-filter:blur(6px);
+    color:#fff;font-size:26px;line-height:1;cursor:pointer;display:grid;place-items:center;transition:.2s background}
+  .cbtn:hover{background:rgba(255,255,255,.3)}
+  .cbtn.prev{left:22px}.cbtn.next{right:22px}
+  .dots{position:absolute;bottom:28px;left:0;right:0;z-index:15;display:flex;gap:10px;justify-content:center}
+  .dots button{width:11px;height:11px;border-radius:50%;border:none;background:rgba(255,255,255,.45);cursor:pointer;padding:0;transition:.2s background,.2s width}
+  .dots button.active{background:var(--primary);width:30px;border-radius:6px}
+  @media(max-width:860px){
+    .carousel{height:66vh}
+    .cbtn{width:42px;height:42px;font-size:22px}.cbtn.prev{left:10px}.cbtn.next{right:10px}
+    .slide .inner{padding:0 22px 76px}
+  }
+
+  /* ROUTE FILTER BAR */
+  .filterbar{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:-18px 0 42px}
+  .fpill{padding:9px 20px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--muted);font-family:inherit;font-weight:600;font-size:14.5px;cursor:pointer;transition:.15s background,.15s color,.15s border-color}
+  .fpill:hover{border-color:var(--primary);color:var(--ink)}
+  .fpill.active{background:var(--primary);color:#2a2113;border-color:var(--primary)}
+
+  section.block{padding:84px 0}
+  .section-head{text-align:center;max-width:660px;margin:0 auto 54px}
+  .section-head .tag{color:var(--gold-deep);font-size:13px;letter-spacing:3px;text-transform:uppercase;font-weight:700}
+  .section-head h2{font-size:clamp(30px,4.5vw,46px);margin:12px 0;font-weight:800;letter-spacing:-.5px}
   .section-head p{color:var(--muted);font-size:17px}
 
-  /* Steps */
+  /* COMPACT STEPS (custom planning) */
+  .steps-mini{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:960px;margin:0 auto 46px}
+  .smini{display:flex;gap:14px;align-items:flex-start;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 20px;box-shadow:var(--shadow)}
+  .smini .n{flex:none;width:32px;height:32px;border-radius:50%;background:var(--primary);color:#2a2113;font-weight:800;display:grid;place-items:center;font-size:15px}
+  .smini > div b{display:block;font-size:15px;margin-bottom:3px;color:var(--ink)}
+  .smini > div span{color:var(--muted);font-size:13.5px;line-height:1.5}
+
+  /* STEPS */
   .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-  .step{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:32px 26px}
-  .step .num{font-family:'Cormorant Garamond',serif;font-size:34px;color:var(--gold-soft);font-weight:700}
-  .step h3{margin:10px 0 8px;font-size:20px}
+  .step{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:32px 26px;box-shadow:var(--shadow);border-top:3px solid var(--primary)}
+  .step .num{font-family:'Cormorant Garamond',serif;font-size:36px;color:var(--primary-d);font-weight:700}
+  .step h3{margin:8px 0 8px;font-size:20px}
   .step p{color:var(--muted);font-size:15.5px}
 
-  /* Itineraries */
-  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;transition:.25s transform,.25s border-color}
-  .card:hover{transform:translateY(-6px);border-color:rgba(212,164,74,.4)}
-  .card .thumb{height:170px;position:relative;display:grid;place-items:center;overflow:hidden}
-  .card .thumb .emoji{font-size:60px;filter:drop-shadow(0 8px 16px rgba(0,0,0,.4))}
-  .t1{background:linear-gradient(135deg,#7a1f2b,#c8384a)}
-  .t2{background:linear-gradient(135deg,#1f5741,#2f9c74)}
-  .t3{background:linear-gradient(135deg,#8a5a1c,#d4a44a)}
-  .card .body{padding:24px}
-  .card .days{color:var(--gold-soft);font-size:13px;font-weight:600;letter-spacing:1px;text-transform:uppercase}
-  .card h3{margin:8px 0 10px;font-size:21px}
-  .card p{color:var(--muted);font-size:15px}
-  .card ul{list-style:none;margin:16px 0 0;display:flex;flex-wrap:wrap;gap:8px}
-  .card ul li{font-size:13px;color:var(--muted);border:1px solid var(--line);padding:5px 11px;border-radius:999px}
+  /* ROUTE CARDS */
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);transition:.25s transform,.25s box-shadow;display:flex;flex-direction:column}
+  .card:hover{transform:translateY(-6px);box-shadow:0 24px 50px -20px rgba(80,55,20,.45)}
+  .card .thumb{height:210px;background:#e6dcc7 center/cover no-repeat;position:relative}
+  .card .thumb::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(0,0,0,.4))}
+  .card .thumb .chip{position:absolute;left:14px;bottom:14px;z-index:2;background:rgba(255,255,255,.96);color:var(--ink);font-size:11.5px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;padding:6px 12px;border-radius:8px}
+  .card .thumb .days{position:absolute;right:14px;top:14px;z-index:2;background:var(--primary);color:#2a2113;font-size:12px;font-weight:800;letter-spacing:.5px;padding:6px 12px;border-radius:999px}
+  .card .body{padding:22px 24px 24px;display:flex;flex-direction:column;flex:1}
+  .card .style{color:var(--gold-deep);font-size:12.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase}
+  .card h3{margin:7px 0 10px;font-size:21px;line-height:1.25}
+  .card p{color:var(--muted);font-size:15px;flex:1}
+  .card .foot{margin-top:18px;display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--line);padding-top:16px}
+  .card .foot .from{font-size:13px;color:var(--muted)}
+  .card .foot .from b{display:block;font-size:19px;color:var(--ink);font-weight:800}
+  .card .foot a{color:var(--accent);font-weight:700;font-size:15px}
+  .card .foot a:hover{color:#7d1f1d}
 
-  /* Pricing */
-  .pricing{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;align-items:stretch}
-  .plan{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:34px 28px;display:flex;flex-direction:column;position:relative}
-  .plan.featured{border-color:var(--gold);box-shadow:0 20px 50px -20px rgba(212,164,74,.5)}
-  .plan .badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,var(--gold),var(--gold-soft));color:#2a1c05;font-size:12px;font-weight:700;letter-spacing:1px;padding:6px 16px;border-radius:999px;text-transform:uppercase}
-  .plan h3{font-size:20px;margin-bottom:6px}
-  .plan .price{font-family:'Cormorant Garamond',serif;font-size:52px;font-weight:700;color:var(--ink);line-height:1;margin:14px 0}
+  /* PRICING */
+  .pricing{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:stretch}
+  .plan{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:34px 28px;display:flex;flex-direction:column;box-shadow:var(--shadow);position:relative}
+  .plan.featured{border-color:var(--primary);box-shadow:0 24px 50px -18px rgba(224,165,14,.45)}
+  .plan .badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--primary);color:#2a2113;font-size:12px;font-weight:800;letter-spacing:1px;padding:6px 16px;border-radius:999px;text-transform:uppercase}
+  .plan h3{font-size:20px;margin-bottom:4px}
+  .plan .price{font-family:'Cormorant Garamond',serif;font-size:54px;font-weight:700;line-height:1;margin:14px 0;color:var(--ink)}
   .plan .price span{font-size:16px;color:var(--muted);font-family:'Inter',sans-serif;font-weight:500}
   .plan .desc{color:var(--muted);font-size:15px;min-height:44px}
   .plan ul{list-style:none;margin:22px 0 28px;display:flex;flex-direction:column;gap:12px}
-  .plan ul li{font-size:15px;color:var(--ink);display:flex;gap:10px;align-items:flex-start}
-  .plan ul li::before{content:"✓";color:var(--gold-soft);font-weight:700;flex:none}
+  .plan ul li{font-size:15px;display:flex;gap:10px;align-items:flex-start}
+  .plan ul li::before{content:"✓";color:var(--primary-d);font-weight:800;flex:none}
   .plan .btn{width:100%;justify-content:center;margin-top:auto}
 
-  /* Why */
-  .why{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
-  .why .item{text-align:center;padding:10px}
-  .why .item .ic{font-size:34px}
+  /* WHY */
+  .why{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+  .why .item{text-align:center;padding:8px}
+  .why .item .ic{font-size:36px}
   .why .item h4{margin:12px 0 6px;font-size:17px}
   .why .item p{color:var(--muted);font-size:14px}
 
-  /* Contact / CTA */
-  .cta{background:linear-gradient(135deg,#1c1523,#231327);border:1px solid rgba(212,164,74,.25);border-radius:24px;padding:56px 40px;text-align:center;position:relative;overflow:hidden}
-  .cta::before{content:"";position:absolute;inset:0;background:radial-gradient(50% 80% at 50% 0%,rgba(200,56,74,.2),transparent 70%)}
-  .cta > *{position:relative;z-index:1}
-  .cta h2{font-size:clamp(28px,4vw,42px);margin-bottom:14px}
-  .cta p{color:var(--muted);font-size:17px;max-width:520px;margin:0 auto 30px}
-  .cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+  /* CONTACT */
+  .contact-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:40px;align-items:start}
+  .contact-intro h2{font-size:clamp(28px,4vw,42px);font-weight:800;letter-spacing:-.5px;margin-bottom:14px}
+  .contact-intro p{color:var(--muted);font-size:17px;margin-bottom:26px}
+  .contact-alt{display:flex;flex-direction:column;gap:14px}
+  .contact-alt a,.contact-alt .ci{display:flex;align-items:center;gap:14px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px 18px;font-weight:600;transition:.2s border-color,.2s transform}
+  .contact-alt a:hover{border-color:var(--primary);transform:translateX(3px)}
+  .contact-alt .ic{width:42px;height:42px;border-radius:10px;background:#fbf1d6;display:grid;place-items:center;font-size:20px;flex:none}
+  .contact-alt small{display:block;color:var(--muted);font-weight:500;font-size:13px}
 
-  /* Footer */
-  footer{border-top:1px solid var(--line);padding:44px 0;margin-top:20px;text-align:center;color:var(--muted);font-size:14px}
-  footer .brand{justify-content:center;margin-bottom:16px}
-  footer .fnav{display:flex;gap:24px;justify-content:center;flex-wrap:wrap;margin-bottom:18px}
-  footer .fnav a{color:var(--muted)}
-  footer .fnav a:hover{color:var(--ink)}
-  footer .disc{max-width:640px;margin:14px auto 0;font-size:12.5px;opacity:.7}
+  .cform{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:30px;box-shadow:var(--shadow);border-top:4px solid var(--primary)}
+  .cform h3{font-size:21px;margin-bottom:6px}
+  .cform .hint{color:var(--muted);font-size:14px;margin-bottom:22px}
+  .cform .frow{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .cform label{display:block;font-size:13.5px;font-weight:600;margin:0 0 16px;color:var(--ink)}
+  .cform input,.cform textarea{width:100%;margin-top:7px;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:#fdfbf6;font:inherit;font-size:15px;color:var(--ink);transition:.15s border-color,.15s box-shadow}
+  .cform input:focus,.cform textarea:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 3px rgba(224,165,14,.18)}
+  .cform textarea{resize:vertical}
+  .cform .btn{width:100%;justify-content:center;margin-top:4px}
+  .cform .priv{color:var(--muted);font-size:12.5px;text-align:center;margin-top:14px}
 
-  @media(max-width:820px){
+  footer{background:var(--ink);color:#cfc4b2;padding:48px 0 40px;text-align:center;font-size:14px}
+  footer .fwordmark{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:#fff;margin-bottom:18px}
+  footer .fwordmark span{color:var(--primary)}
+  footer .fnav{display:flex;gap:24px;justify-content:center;flex-wrap:wrap;margin-bottom:16px}
+  footer .fnav a{color:#cfc4b2}
+  footer .fnav a:hover{color:#fff}
+  footer .disc{max-width:640px;margin:14px auto 0;font-size:12.5px;opacity:.65}
+
+  @media(max-width:860px){
     .steps,.cards,.pricing{grid-template-columns:1fr}
     .why{grid-template-columns:1fr 1fr}
+    .steps-mini{grid-template-columns:1fr}
     .plan.featured{order:-1}
+    .contact-grid{grid-template-columns:1fr;gap:28px}
+    .cform .frow{grid-template-columns:1fr}
     section.block{padding:60px 0}
+    .hero{min-height:76vh}
   }
 </style>
 </head>
 <body>
 
-<header>
-  <div class="wrap nav">
-    <div class="brand">
-      <div class="seal">華</div>
-      <div>Mystic China<small>Eastern Mystique</small></div>
-    </div>
-    <nav class="nav-links">
-      <a href="#how">How it works</a>
-      <a href="#routes">Sample routes</a>
-      <a href="#pricing">Pricing</a>
-      <a class="btn btn-gold" href="#contact">Plan my trip</a>
-    </nav>
-  </div>
-</header>
+<div class="wordmark">Magic <span>China</span></div>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="wrap">
-    <span class="eyebrow">Personalized · Local Expert · Hassle-Free</span>
-    <h1 class="serif">Unlock the Mystic East
-      <span class="sub">Custom China Travel Itineraries</span>
-    </h1>
-    <p class="lead">Visa, mobile payment, high-speed rail, hidden gems — China can feel like a maze. I plan a personal, day-by-day itinerary so you travel like an insider, not a lost tourist.</p>
-    <div class="hero-cta">
-      <a class="btn btn-primary" href="#pricing">See plans &amp; pricing →</a>
-      <a class="btn btn-ghost" href="#routes">Browse sample routes</a>
+<!-- HERO CAROUSEL -->
+<section class="carousel" id="top">
+  <div class="slides" id="slides">
+
+    <div class="slide" style="background-image:url('https://loremflickr.com/1600/900/greatwall,china?lock=48')">
+      <div class="inner">
+        <div class="cat"><span class="en">Most Popular</span></div>
+        <h2>The Golden Triangle</h2>
+        <div class="meta">Beijing · Xi'an · Shanghai &nbsp;·&nbsp; 8 days &nbsp;·&nbsp; <b>from $99</b></div>
+        <p class="desc">Great Wall, Terracotta Army and the neon skyline of Shanghai — connected by high-speed rail.</p>
+        <div class="scta">
+          <a class="btn btn-primary" href="#contact">Plan this trip →</a>
+          <a class="btn btn-outline-light" href="#routes">See all routes</a>
+        </div>
+      </div>
     </div>
-    <div class="trust-row">
-      <span>🗺️ <b>Tailored</b> to your dates &amp; pace</span>
-      <span>💳 <b>Alipay / WeChat Pay</b> set-up guide</span>
-      <span>🚄 <b>Trains &amp; tickets</b> pre-planned</span>
+
+    <div class="slide" style="background-image:url('https://loremflickr.com/1600/900/zhangjiajie,mountain?lock=29')">
+      <div class="inner">
+        <div class="cat"><span class="en">Featured This Month</span></div>
+        <h2>The Avatar Mountains</h2>
+        <div class="meta">Zhangjiajie · Fenghuang &nbsp;·&nbsp; 6 days &nbsp;·&nbsp; <b>from $89</b></div>
+        <p class="desc">Walk among the towering sandstone pillars that inspired Pandora, then visit a riverside ancient town.</p>
+        <div class="scta">
+          <a class="btn btn-primary" href="#contact">Plan this trip →</a>
+          <a class="btn btn-outline-light" href="#routes">See all routes</a>
+        </div>
+      </div>
     </div>
+
+    <div class="slide" style="background-image:url('https://loremflickr.com/1600/900/giantpanda?lock=3')">
+      <div class="inner">
+        <div class="cat"><span class="en">Best Value</span></div>
+        <h2>Pandas &amp; Hotpot</h2>
+        <div class="meta">Chengdu · Sichuan &nbsp;·&nbsp; 6 days &nbsp;·&nbsp; <b>from $79</b></div>
+        <p class="desc">Meet the giant pandas, feast on fiery hotpot and relax in misty tea houses in China's laid-back heart.</p>
+        <div class="scta">
+          <a class="btn btn-primary" href="#contact">Plan this trip →</a>
+          <a class="btn btn-outline-light" href="#routes">See all routes</a>
+        </div>
+      </div>
+    </div>
+
   </div>
+  <button class="cbtn prev" id="cPrev" aria-label="Previous">‹</button>
+  <button class="cbtn next" id="cNext" aria-label="Next">›</button>
+  <div class="dots" id="cDots"></div>
 </section>
 
-<!-- HOW IT WORKS -->
-<section class="block" id="how">
+<!-- ROUTES (existing itineraries — our early focus) -->
+<section class="block" id="routes">
   <div class="wrap">
     <div class="section-head">
-      <div class="tag">How it works</div>
-      <h2>Your trip, planned in 3 steps</h2>
-      <p>No apps to figure out, no hours of research. Tell me what you want — I do the rest.</p>
+      <div class="tag">Our routes</div>
+      <h2>Handcrafted journeys across China</h2>
+      <p>Ready-to-travel itineraries, each with handpicked hotels, tickets and insider tips. Pick one and you're set.</p>
     </div>
-    <div class="steps">
-      <div class="step">
-        <div class="num">01</div>
-        <h3>Tell me your dream</h3>
-        <p>Dates, budget, cities you're curious about, and your travel style. A quick message is all I need to start.</p>
-      </div>
-      <div class="step">
-        <div class="num">02</div>
-        <h3>I craft your route</h3>
-        <p>You receive a day-by-day plan: where to stay, how to get around, what to see, where to eat — with handpicked hotels and tickets.</p>
-      </div>
-      <div class="step">
-        <div class="num">03</div>
-        <h3>Travel with confidence</h3>
-        <p>Follow your personal guide on the go, with payment &amp; language tips. Optional chat support while you're in China.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SAMPLE ROUTES -->
-<section class="block" id="routes" style="background:var(--bg2)">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="tag">Sample routes</div>
-      <h2>Journeys travelers love</h2>
-      <p>Just a taste — every itinerary is fully customized to you.</p>
+    <div class="filterbar" id="routeFilter">
+      <button class="fpill active" data-f="all">All routes</button>
+      <button class="fpill" data-f="culture">Culture &amp; History</button>
+      <button class="fpill" data-f="nature">Nature &amp; Scenery</button>
+      <button class="fpill" data-f="food">Food &amp; Pandas</button>
     </div>
     <div class="cards">
-      <div class="card">
-        <div class="thumb t1"><span class="emoji">🏯</span></div>
+
+      <div class="card" data-cat="culture">
+        <div class="thumb" style="background-image:url('https://loremflickr.com/640/420/greatwall,beijing?lock=11')">
+          <span class="chip">Classic</span><span class="days">8 days</span>
+        </div>
         <div class="body">
-          <div class="days">8 Days · Classic</div>
-          <h3>Beijing · Xi'an · Shanghai</h3>
-          <p>The golden triangle: Great Wall, Terracotta Army, and the neon skyline — connected by high-speed rail.</p>
-          <ul><li>Great Wall</li><li>Terracotta Army</li><li>The Bund</li><li>Bullet train</li></ul>
+          <div class="style">Beijing · Xi'an · Shanghai</div>
+          <h3>The Golden Triangle</h3>
+          <p>Great Wall, Terracotta Army and the neon skyline of Shanghai — connected by high-speed rail.</p>
+          <div class="foot"><div class="from">Tailored plan<b>from $99</b></div><a href="#contact">Plan this →</a></div>
         </div>
       </div>
-      <div class="card">
-        <div class="thumb t2"><span class="emoji">🐼</span></div>
+
+      <div class="card" data-cat="food">
+        <div class="thumb" style="background-image:url('https://loremflickr.com/640/420/giantpanda?lock=3')">
+          <span class="chip">Nature &amp; Food</span><span class="days">6 days</span>
+        </div>
         <div class="body">
-          <div class="days">6 Days · Nature &amp; Food</div>
-          <h3>Chengdu &amp; Sichuan</h3>
-          <p>Meet the pandas, feast on hotpot, and wander misty tea houses in China's most laid-back region.</p>
-          <ul><li>Panda Base</li><li>Hotpot</li><li>Leshan Buddha</li><li>Tea houses</li></ul>
+          <div class="style">Chengdu · Sichuan</div>
+          <h3>Pandas &amp; Hotpot</h3>
+          <p>Meet the giant pandas, feast on fiery hotpot and relax in misty tea houses in China's laid-back heart.</p>
+          <div class="foot"><div class="from">Tailored plan<b>from $79</b></div><a href="#contact">Plan this →</a></div>
         </div>
       </div>
-      <div class="card">
-        <div class="thumb t3"><span class="emoji">⛰️</span></div>
+
+      <div class="card" data-cat="nature">
+        <div class="thumb" style="background-image:url('https://loremflickr.com/640/420/guilin,river?lock=17')">
+          <span class="chip">Scenery</span><span class="days">7 days</span>
+        </div>
         <div class="body">
-          <div class="days">7 Days · Scenery</div>
-          <h3>Guilin · Yangshuo · Li River</h3>
-          <p>Cruise past storybook karst mountains, cycle through rice fields, and catch the light show on the water.</p>
-          <ul><li>Li River cruise</li><li>Rice terraces</li><li>Bamboo raft</li><li>Countryside</li></ul>
+          <div class="style">Guilin · Yangshuo</div>
+          <h3>Li River &amp; Karst Peaks</h3>
+          <p>Cruise past storybook mountains, cycle through rice fields and drift down the river on a bamboo raft.</p>
+          <div class="foot"><div class="from">Tailored plan<b>from $89</b></div><a href="#contact">Plan this →</a></div>
         </div>
       </div>
+
+      <div class="card" data-cat="culture">
+        <div class="thumb" style="background-image:url('https://loremflickr.com/640/420/lijiang,yunnan?lock=23')">
+          <span class="chip">Ancient Towns</span><span class="days">9 days</span>
+        </div>
+        <div class="body">
+          <div class="style">Yunnan · Lijiang &amp; Dali</div>
+          <h3>Old Towns &amp; Snow Peaks</h3>
+          <p>Wander cobbled ancient towns, meet minority cultures and gaze up at the Jade Dragon Snow Mountain.</p>
+          <div class="foot"><div class="from">Tailored plan<b>from $119</b></div><a href="#contact">Plan this →</a></div>
+        </div>
+      </div>
+
+      <div class="card" data-cat="nature">
+        <div class="thumb" style="background-image:url('https://loremflickr.com/640/420/zhangjiajie,mountain?lock=29')">
+          <span class="chip">Adventure</span><span class="days">6 days</span>
+        </div>
+        <div class="body">
+          <div class="style">Zhangjiajie · Fenghuang</div>
+          <h3>The Avatar Mountains</h3>
+          <p>Walk among the towering sandstone pillars that inspired Pandora, then visit a riverside ancient town.</p>
+          <div class="foot"><div class="from">Tailored plan<b>from $89</b></div><a href="#contact">Plan this →</a></div>
+        </div>
+      </div>
+
+      <div class="card" data-cat="culture">
+        <div class="thumb" style="background-image:url('https://loremflickr.com/640/420/dunhuang,desert?lock=31')">
+          <span class="chip">History</span><span class="days">10 days</span>
+        </div>
+        <div class="body">
+          <div class="style">Silk Road · Xi'an → Dunhuang</div>
+          <h3>Deserts &amp; Ancient Trade</h3>
+          <p>Follow the legendary Silk Road through grottoes, sand dunes and oasis towns steeped in history.</p>
+          <div class="foot"><div class="from">Tailored plan<b>from $139</b></div><a href="#contact">Plan this →</a></div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
 
-<!-- PRICING -->
-<section class="block" id="pricing">
+<!-- CUSTOM PLANNING (transition + steps + pricing, merged) -->
+<section class="block" id="custom" style="background:#f4ebd8">
   <div class="wrap">
     <div class="section-head">
-      <div class="tag">Pricing</div>
-      <h2>Simple, one-time planning fee</h2>
-      <p>Pay once for your custom plan. No subscriptions, no hidden costs.</p>
+      <div class="tag">Custom planning</div>
+      <h2>Don't see your perfect trip?</h2>
+      <p>Tell me your dates, pace and interests, and I'll design a completely custom itinerary built around you — for one simple, one-time fee. Here's how it works:</p>
+    </div>
+    <div class="steps-mini">
+      <div class="smini"><span class="n">1</span><div><b>Tell me your dream</b><span>Your dates, budget, must-sees and travel style.</span></div></div>
+      <div class="smini"><span class="n">2</span><div><b>I craft your route</b><span>A day-by-day plan with handpicked hotels &amp; tickets.</span></div></div>
+      <div class="smini"><span class="n">3</span><div><b>Travel with confidence</b><span>On-the-go guide, payment &amp; language tips, chat support.</span></div></div>
     </div>
     <div class="pricing">
       <div class="plan">
         <h3>Basic</h3>
         <div class="price">$39</div>
         <div class="desc">Perfect for a single-city stopover or short getaway.</div>
-        <ul>
-          <li>1 city · up to 3 days</li>
-          <li>Day-by-day itinerary</li>
-          <li>Hotel &amp; area recommendations</li>
-          <li>Payment &amp; transport basics</li>
-        </ul>
+        <ul><li>1 city · up to 3 days</li><li>Day-by-day itinerary</li><li>Hotel &amp; area recommendations</li><li>Payment &amp; transport basics</li></ul>
         <a class="btn btn-ghost" href="#contact">Get started</a>
       </div>
       <div class="plan featured">
@@ -295,26 +355,14 @@
         <h3>Classic</h3>
         <div class="price">$99</div>
         <div class="desc">A complete multi-city adventure, fully mapped out.</div>
-        <ul>
-          <li>Multi-city · 7–10 days</li>
-          <li>Full day-by-day itinerary</li>
-          <li>Handpicked hotels &amp; tickets</li>
-          <li>Train &amp; transfer planning</li>
-          <li>Restaurant &amp; hidden-gem list</li>
-        </ul>
-        <a class="btn btn-gold" href="#contact">Plan my trip</a>
+        <ul><li>Multi-city · 7–10 days</li><li>Full day-by-day itinerary</li><li>Handpicked hotels &amp; tickets</li><li>Train &amp; transfer planning</li><li>Restaurant &amp; hidden-gem list</li></ul>
+        <a class="btn btn-primary" href="#contact">Plan my trip</a>
       </div>
       <div class="plan">
         <h3>Premium</h3>
         <div class="price">$199</div>
         <div class="desc">White-glove planning with support throughout your trip.</div>
-        <ul>
-          <li>Everything in Classic</li>
-          <li>Unlimited revisions</li>
-          <li>Booking assistance</li>
-          <li>Chat support while traveling</li>
-          <li>24h response guarantee</li>
-        </ul>
+        <ul><li>Everything in Classic</li><li>Unlimited revisions</li><li>Booking assistance</li><li>Chat support while traveling</li><li>24h response guarantee</li></ul>
         <a class="btn btn-ghost" href="#contact">Go Premium</a>
       </div>
     </div>
@@ -322,7 +370,7 @@
 </section>
 
 <!-- WHY -->
-<section class="block" id="why" style="background:var(--bg2)">
+<section class="block" id="why">
   <div class="wrap">
     <div class="section-head">
       <div class="tag">Why travelers choose me</div>
@@ -337,36 +385,112 @@
   </div>
 </section>
 
-<!-- CONTACT / CTA -->
-<section class="block" id="contact">
+<!-- CONTACT -->
+<section class="block" id="contact" style="background:#f4ebd8">
   <div class="wrap">
-    <div class="cta">
-      <h2 class="serif">Ready to explore China?</h2>
-      <p>Send me your dates and what you'd love to see. I'll reply with a plan and a quote — no commitment.</p>
-      <div class="cta-btns">
-        <a class="btn btn-primary" href="mailto:your@email.com?subject=China%20trip%20planning&amp;body=Hi!%20I'd%20like%20a%20custom%20itinerary.%0A%0ATravel%20dates:%0ANumber%20of%20travelers:%0ACities%20I'm%20interested%20in:%0ABudget:%0AAnything%20special:">✉️ Email me</a>
-        <a class="btn btn-gold" href="https://wa.me/0000000000?text=Hi!%20I'd%20like%20a%20custom%20China%20itinerary." target="_blank" rel="noopener">💬 Chat on WhatsApp</a>
+    <div class="contact-grid">
+      <div class="contact-intro">
+        <h2 class="serif">Ready to explore China?</h2>
+        <p>Tell me your dates and what you'd love to see. I'll reply with a plan and a quote — no commitment.</p>
+        <div class="contact-alt">
+          <div class="ci">
+            <span class="ic">💬</span>
+            <span>Add me on WeChat<small>WeChat ID: your-wechat-id</small></span>
+          </div>
+          <a href="https://wa.me/0000000000?text=Hi!%20I'd%20like%20a%20custom%20China%20itinerary." target="_blank" rel="noopener">
+            <span class="ic">💬</span>
+            <span>Chat on WhatsApp<small>Usually replies within a day</small></span>
+          </a>
+        </div>
       </div>
+
+      <!-- Email form (FormSubmit.co: replace the email in the action, then submit once to activate) -->
+      <form class="cform" action="https://formsubmit.co/your@email.com" method="POST">
+        <h3>Write me your trip</h3>
+        <p class="hint">Fill this in and I'll get back to you by email.</p>
+        <input type="hidden" name="_subject" value="New China trip enquiry — Magic China">
+        <input type="hidden" name="_template" value="table">
+        <input type="text" name="_honey" style="display:none">
+        <div class="frow">
+          <label>Name
+            <input type="text" name="name" placeholder="Your name" required>
+          </label>
+          <label>Email
+            <input type="email" name="email" placeholder="you@email.com" required>
+          </label>
+        </div>
+        <div class="frow">
+          <label>Travel dates
+            <input type="text" name="travel dates" placeholder="e.g. May 2026, 10 days">
+          </label>
+          <label>Travelers
+            <input type="text" name="travelers" placeholder="e.g. 2 adults">
+          </label>
+        </div>
+        <label>Where would you like to go &amp; what do you love?
+          <textarea name="message" rows="4" placeholder="Cities, interests, budget, pace..." required></textarea>
+        </label>
+        <button class="btn btn-primary" type="submit">Send my enquiry →</button>
+        <p class="priv">Your details are only used to reply to your enquiry.</p>
+      </form>
     </div>
   </div>
 </section>
 
 <footer>
   <div class="wrap">
-    <div class="brand">
-      <div class="seal">華</div>
-      <div>Mystic China<small>Eastern Mystique</small></div>
-    </div>
+    <div class="fwordmark">Magic <span>China</span></div>
     <div class="fnav">
-      <a href="#how">How it works</a>
-      <a href="#routes">Sample routes</a>
-      <a href="#pricing">Pricing</a>
-      <a href="#contact">Contact</a>
+      <a href="#top">Top</a><a href="#routes">Routes</a><a href="#custom">Custom planning</a><a href="#contact">Contact</a>
     </div>
-    <div>© 2026 Mystic China · Custom travel itineraries for foreign travelers</div>
-    <div class="disc">Independent travel-planning service. Not affiliated with any government body. Recommendations may include partner links.</div>
+    <div>© 2026 Magic China · Custom travel itineraries for foreign travelers</div>
+    <div class="disc">Independent travel-planning service. Not affiliated with any government body. Recommendations may include partner links. Photos are placeholder stock images.</div>
   </div>
 </footer>
+
+<script>
+(function(){
+  var track=document.getElementById('slides');
+  var slides=track?track.children:[];
+  var n=slides.length, i=0, timer=null;
+  var dotsWrap=document.getElementById('cDots');
+  if(!track||!n) return;
+  // build dots
+  for(var d=0;d<n;d++){(function(k){var b=document.createElement('button');b.addEventListener('click',function(){go(k);reset();});dotsWrap.appendChild(b);})(d);}
+  var dots=dotsWrap.children;
+  function render(){track.style.transform='translateX('+(-i*100)+'%)';for(var k=0;k<n;k++){dots[k].className=(k===i?'active':'');}}
+  function go(k){i=(k+n)%n;render();}
+  function next(){go(i+1);}
+  function prev(){go(i-1);}
+  function start(){timer=setInterval(next,5500);}
+  function reset(){clearInterval(timer);start();}
+  document.getElementById('cNext').addEventListener('click',function(){next();reset();});
+  document.getElementById('cPrev').addEventListener('click',function(){prev();reset();});
+  render();start();
+  // basic touch swipe
+  var x0=null;
+  track.addEventListener('touchstart',function(e){x0=e.touches[0].clientX;},{passive:true});
+  track.addEventListener('touchend',function(e){if(x0===null)return;var dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>40){dx<0?next():prev();reset();}x0=null;},{passive:true});
+})();
+
+// Route filter
+(function(){
+  var bar=document.getElementById('routeFilter');
+  if(!bar) return;
+  var pills=bar.querySelectorAll('.fpill');
+  var cards=document.querySelectorAll('#routes .card');
+  bar.addEventListener('click',function(e){
+    var btn=e.target.closest('.fpill'); if(!btn) return;
+    for(var p=0;p<pills.length;p++){pills[p].classList.remove('active');}
+    btn.classList.add('active');
+    var f=btn.getAttribute('data-f');
+    for(var c=0;c<cards.length;c++){
+      var show=(f==='all')||(cards[c].getAttribute('data-cat')===f);
+      cards[c].style.display=show?'':'none';
+    }
+  });
+})();
+</script>
 
 </body>
 </html>
