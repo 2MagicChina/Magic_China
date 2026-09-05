@@ -1,2 +1,2 @@
-# MysticChina
-Mystic China — custom China travel itineraries for you.
+# Magic China
+Magic China — custom China travel itineraries for you.
