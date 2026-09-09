@@ -116,7 +116,10 @@
   .card .style{color:var(--gold-deep);font-size:12.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase}
   .card h3{margin:7px 0 10px;font-size:21px;line-height:1.25}
   .card p{color:var(--muted);font-size:15px;flex:1}
-  .card .foot{margin-top:18px;display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--line);padding-top:16px}
+  .card .incl{margin-top:12px;font-size:12.5px;color:var(--muted);background:#faf3e2;border:1px solid var(--line);border-radius:9px;padding:9px 11px;line-height:1.55}
+  .card .incl b{color:var(--ink)}
+  .card .incl .excl{color:#a8846a}
+  .card .foot{margin-top:16px;display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--line);padding-top:16px}
   .card .foot .from{font-size:13px;color:var(--muted)}
   .card .foot .from b{display:block;font-size:19px;color:var(--ink);font-weight:800}
   .card .foot a{color:var(--accent);font-weight:700;font-size:15px}
@@ -192,41 +195,54 @@
 <section class="carousel" id="top">
   <div class="slides" id="slides">
 
-    <div class="slide" style="background-image:url('https://loremflickr.com/1600/900/greatwall,china?lock=48')">
+    <div class="slide" style="background-image:url('images/zhangjiajie.jpg')">
       <div class="inner">
         <div class="cat"><span class="en">Most Popular</span></div>
-        <h2>The Golden Triangle</h2>
-        <div class="meta">Beijing · Xi'an · Shanghai &nbsp;·&nbsp; 8 days &nbsp;·&nbsp; <b>from $99</b></div>
-        <p class="desc">Great Wall, Terracotta Army and the neon skyline of Shanghai — connected by high-speed rail.</p>
+        <h2>Avatar Forest Park</h2>
+        <div class="meta">Zhangjiajie · 1 day &nbsp;·&nbsp; <b>¥800 / person</b></div>
+        <p class="desc">Bailong Elevator, Yuanjiajie, Tianzi Mountain, Ten-Mile Gallery and Golden Whip Stream — the peaks that inspired Avatar.</p>
         <div class="scta">
-          <a class="btn btn-primary" href="#contact">Plan this trip →</a>
-          <a class="btn btn-outline-light" href="#routes">See all routes</a>
+          <a class="btn btn-primary" href="#contact">Enquire now →</a>
+          <a class="btn btn-outline-light" href="#routes">See all tours</a>
         </div>
       </div>
     </div>
 
-    <div class="slide" style="background-image:url('https://loremflickr.com/1600/900/zhangjiajie,mountain?lock=29')">
+    <div class="slide" style="background-image:url('images/tianmen.jpg')">
       <div class="inner">
-        <div class="cat"><span class="en">Featured This Month</span></div>
-        <h2>The Avatar Mountains</h2>
-        <div class="meta">Zhangjiajie · Fenghuang &nbsp;·&nbsp; 6 days &nbsp;·&nbsp; <b>from $89</b></div>
-        <p class="desc">Walk among the towering sandstone pillars that inspired Pandora, then visit a riverside ancient town.</p>
+        <div class="cat"><span class="en">Thrill Seeker</span></div>
+        <h2>Tianmen Mountain</h2>
+        <div class="meta">Zhangjiajie · 1 day &nbsp;·&nbsp; <b>¥850 / person</b></div>
+        <p class="desc">Cable car, Tianmen Cave, the 999 Stairway, Guigu cliff plank road and the famous glass walkway.</p>
         <div class="scta">
-          <a class="btn btn-primary" href="#contact">Plan this trip →</a>
-          <a class="btn btn-outline-light" href="#routes">See all routes</a>
+          <a class="btn btn-primary" href="#contact">Enquire now →</a>
+          <a class="btn btn-outline-light" href="#routes">See all tours</a>
         </div>
       </div>
     </div>
 
-    <div class="slide" style="background-image:url('https://loremflickr.com/1600/900/giantpanda?lock=3')">
+    <div class="slide" style="background-image:url('images/glassbridge.jpg')">
       <div class="inner">
         <div class="cat"><span class="en">Best Value</span></div>
-        <h2>Pandas &amp; Hotpot</h2>
-        <div class="meta">Chengdu · Sichuan &nbsp;·&nbsp; 6 days &nbsp;·&nbsp; <b>from $79</b></div>
-        <p class="desc">Meet the giant pandas, feast on fiery hotpot and relax in misty tea houses in China's laid-back heart.</p>
+        <h2>Zhangjiajie in Full · 2 Days</h2>
+        <div class="meta">3 parks · 2 days &nbsp;·&nbsp; <b>¥1400 / person</b></div>
+        <p class="desc">Forest Park, Tianmen Mountain and the Grand Canyon Glass Bridge — the complete Zhangjiajie experience over two days.</p>
         <div class="scta">
-          <a class="btn btn-primary" href="#contact">Plan this trip →</a>
-          <a class="btn btn-outline-light" href="#routes">See all routes</a>
+          <a class="btn btn-primary" href="#contact">Enquire now →</a>
+          <a class="btn btn-outline-light" href="#routes">See all tours</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide" style="background-image:url('images/shanghai-bund.jpg')">
+      <div class="inner">
+        <div class="cat"><span class="en">City Escape</span></div>
+        <h2>Shanghai Day Tour</h2>
+        <div class="meta">Shanghai · 1 day &nbsp;·&nbsp; <b>Price on request</b></div>
+        <p class="desc">The Bund, Lujiazui skyline, Shanghai Tower, Yu Garden and a Huangpu River cruise — the city's icons in a day.</p>
+        <div class="scta">
+          <a class="btn btn-primary" href="#contact">Enquire now →</a>
+          <a class="btn btn-outline-light" href="#routes">See all tours</a>
         </div>
       </div>
     </div>
@@ -241,87 +257,79 @@
 <section class="block" id="routes">
   <div class="wrap">
     <div class="section-head">
-      <div class="tag">Our routes</div>
-      <h2>Handcrafted journeys across China</h2>
-      <p>Ready-to-travel itineraries, each with handpicked hotels, tickets and insider tips. Pick one and you're set.</p>
+      <div class="tag">Our tours</div>
+      <h2>Guided tours, all sorted for you</h2>
+      <p>Ready-to-book tours in Zhangjiajie and Shanghai — park tickets, transfers and an English-speaking guide included, so you just show up and enjoy.</p>
     </div>
     <div class="filterbar" id="routeFilter">
-      <button class="fpill active" data-f="all">All routes</button>
-      <button class="fpill" data-f="culture">Culture &amp; History</button>
-      <button class="fpill" data-f="nature">Nature &amp; Scenery</button>
-      <button class="fpill" data-f="food">Food &amp; Pandas</button>
+      <button class="fpill active" data-f="all">All tours</button>
+      <button class="fpill" data-f="zhangjiajie">Zhangjiajie</button>
+      <button class="fpill" data-f="shanghai">Shanghai</button>
     </div>
     <div class="cards">
 
-      <div class="card" data-cat="culture">
-        <div class="thumb" style="background-image:url('https://loremflickr.com/640/420/greatwall,beijing?lock=11')">
-          <span class="chip">Classic</span><span class="days">8 days</span>
+      <div class="card" data-cat="zhangjiajie">
+        <div class="thumb" style="background-image:url('images/zhangjiajie.jpg')">
+          <span class="chip">1-Day Tour</span><span class="days">1 day</span>
         </div>
         <div class="body">
-          <div class="style">Beijing · Xi'an · Shanghai</div>
-          <h3>The Golden Triangle</h3>
-          <p>Great Wall, Terracotta Army and the neon skyline of Shanghai — connected by high-speed rail.</p>
-          <div class="foot"><div class="from">Tailored plan<b>from $99</b></div><a href="#contact">Plan this →</a></div>
+          <div class="style">Zhangjiajie National Forest Park</div>
+          <h3>Avatar Forest Park Highlights</h3>
+          <p>Bailong Elevator · Yuanjiajie · Tianzi Mountain · Ten-Mile Gallery · Golden Whip Stream.</p>
+          <div class="incl"><b>Includes:</b> park ticket · park shuttle · hotel pick-up &amp; drop-off · English guide.<br><span class="excl">Excludes: Bailong Elevator, Tianzi cable car, mini-train.</span></div>
+          <div class="foot"><div class="from">Per person<b>¥800</b></div><a href="#contact">Enquire →</a></div>
         </div>
       </div>
 
-      <div class="card" data-cat="food">
-        <div class="thumb" style="background-image:url('https://loremflickr.com/640/420/giantpanda?lock=3')">
-          <span class="chip">Nature &amp; Food</span><span class="days">6 days</span>
+      <div class="card" data-cat="zhangjiajie">
+        <div class="thumb" style="background-image:url('images/tianmen.jpg')">
+          <span class="chip">1-Day Tour</span><span class="days">1 day</span>
         </div>
         <div class="body">
-          <div class="style">Chengdu · Sichuan</div>
-          <h3>Pandas &amp; Hotpot</h3>
-          <p>Meet the giant pandas, feast on fiery hotpot and relax in misty tea houses in China's laid-back heart.</p>
-          <div class="foot"><div class="from">Tailored plan<b>from $79</b></div><a href="#contact">Plan this →</a></div>
+          <div class="style">Tianmen Mountain</div>
+          <h3>Tianmen Mountain &amp; Glass Walkway</h3>
+          <p>Cable car · Tianmen Cave · 999 Stairway · Guigu cliff plank road · glass walkway · cable car.</p>
+          <div class="incl"><b>Includes:</b> hotel pick-up · park ticket · round-trip cable car · park shuttle · English guide.</div>
+          <div class="foot"><div class="from">Per person<b>¥850</b></div><a href="#contact">Enquire →</a></div>
         </div>
       </div>
 
-      <div class="card" data-cat="nature">
-        <div class="thumb" style="background-image:url('https://loremflickr.com/640/420/guilin,river?lock=17')">
-          <span class="chip">Scenery</span><span class="days">7 days</span>
+      <div class="card" data-cat="zhangjiajie">
+        <div class="thumb" style="background-image:url('images/glassbridge.jpg')">
+          <span class="chip">2-Day Tour</span><span class="days">2 days</span>
         </div>
         <div class="body">
-          <div class="style">Guilin · Yangshuo</div>
-          <h3>Li River &amp; Karst Peaks</h3>
-          <p>Cruise past storybook mountains, cycle through rice fields and drift down the river on a bamboo raft.</p>
-          <div class="foot"><div class="from">Tailored plan<b>from $89</b></div><a href="#contact">Plan this →</a></div>
+          <div class="style">Forest Park · Tianmen · Glass Bridge</div>
+          <h3>Zhangjiajie in Full</h3>
+          <p><b>Day 1:</b> Bailong Elevator · Yuanjiajie · Tianzi Mountain · Ten-Mile Gallery.<br><b>Day 2:</b> Tianmen Mountain loop · Grand Canyon Glass Bridge.</p>
+          <div class="incl"><b>Includes:</b> 3 park tickets · park shuttles · transfers · English guide.<br><span class="excl">Excludes: Bailong Elevator, Tianzi cable car, canyon transport (5 of 7).</span></div>
+          <div class="foot"><div class="from">Per person<b>¥1400</b></div><a href="#contact">Enquire →</a></div>
         </div>
       </div>
 
-      <div class="card" data-cat="culture">
-        <div class="thumb" style="background-image:url('https://loremflickr.com/640/420/lijiang,yunnan?lock=23')">
-          <span class="chip">Ancient Towns</span><span class="days">9 days</span>
+      <div class="card" data-cat="shanghai">
+        <div class="thumb" style="background-image:url('images/shanghai-bund.jpg')">
+          <span class="chip">Express</span><span class="days">2.5 hrs</span>
         </div>
         <div class="body">
-          <div class="style">Yunnan · Lijiang &amp; Dali</div>
-          <h3>Old Towns &amp; Snow Peaks</h3>
-          <p>Wander cobbled ancient towns, meet minority cultures and gaze up at the Jade Dragon Snow Mountain.</p>
-          <div class="foot"><div class="from">Tailored plan<b>from $119</b></div><a href="#contact">Plan this →</a></div>
+          <div class="style">Shanghai · Express tour</div>
+          <h3>Shanghai in a Snapshot</h3>
+          <p>Yu Garden · City God Temple bazaar · The Bund · Lujiazui skyline — the highlights in 2.5 hours.</p>
+          <div class="incl"><b>Includes:</b> transfers · English guide.<br><span class="excl">Excludes: attraction entrance tickets.</span></div>
+          <div class="foot"><div class="from">Price on request</div><a href="#contact">Enquire →</a></div>
         </div>
       </div>
 
-      <div class="card" data-cat="nature">
-        <div class="thumb" style="background-image:url('https://loremflickr.com/640/420/zhangjiajie,mountain?lock=29')">
-          <span class="chip">Adventure</span><span class="days">6 days</span>
+      <div class="card" data-cat="shanghai">
+        <div class="thumb" style="background-image:url('images/shanghai-pudong.jpg')">
+          <span class="chip">1-Day Tour</span><span class="days">1 day</span>
         </div>
         <div class="body">
-          <div class="style">Zhangjiajie · Fenghuang</div>
-          <h3>The Avatar Mountains</h3>
-          <p>Walk among the towering sandstone pillars that inspired Pandora, then visit a riverside ancient town.</p>
-          <div class="foot"><div class="from">Tailored plan<b>from $89</b></div><a href="#contact">Plan this →</a></div>
-        </div>
-      </div>
-
-      <div class="card" data-cat="culture">
-        <div class="thumb" style="background-image:url('https://loremflickr.com/640/420/dunhuang,desert?lock=31')">
-          <span class="chip">History</span><span class="days">10 days</span>
-        </div>
-        <div class="body">
-          <div class="style">Silk Road · Xi'an → Dunhuang</div>
-          <h3>Deserts &amp; Ancient Trade</h3>
-          <p>Follow the legendary Silk Road through grottoes, sand dunes and oasis towns steeped in history.</p>
-          <div class="foot"><div class="from">Tailored plan<b>from $139</b></div><a href="#contact">Plan this →</a></div>
+          <div class="style">Shanghai · Full day</div>
+          <h3>Classic Shanghai Day Tour</h3>
+          <p>City God Temple bazaar · The Bund · Lujiazui · Shanghai Tower · Huangpu River cruise.</p>
+          <div class="incl"><b>Includes:</b> transfers · English guide · Shanghai Tower · Huangpu River cruise.</div>
+          <div class="foot"><div class="from">Price on request</div><a href="#contact">Enquire →</a></div>
         </div>
       </div>
 
