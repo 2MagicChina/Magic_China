@@ -175,6 +175,36 @@
   footer .fnav a:hover{color:#fff}
   footer .disc{max-width:640px;margin:14px auto 0;font-size:12.5px;opacity:.65}
 
+  /* CLICKABLE CARD */
+  .card{cursor:pointer}
+  .card .foot .more{color:var(--accent);font-weight:700;font-size:15px}
+  .card:hover .foot .more{color:#7d1f1d}
+
+  /* TOUR DETAIL MODAL */
+  .modal{position:fixed;inset:0;z-index:100;display:none;align-items:flex-start;justify-content:center;padding:28px 16px;background:rgba(20,13,3,.62);backdrop-filter:blur(4px);overflow-y:auto}
+  .modal.open{display:flex}
+  .modal-card{background:var(--surface);border-radius:20px;max-width:720px;width:100%;overflow:hidden;box-shadow:0 30px 80px -20px rgba(0,0,0,.55);position:relative;animation:mpop .25s ease}
+  @keyframes mpop{from{transform:translateY(18px);opacity:0}to{transform:none;opacity:1}}
+  .modal-close{position:absolute;top:14px;right:14px;z-index:4;width:38px;height:38px;border-radius:50%;border:none;background:rgba(0,0,0,.5);color:#fff;font-size:22px;line-height:1;cursor:pointer;display:grid;place-items:center}
+  .modal-close:hover{background:rgba(0,0,0,.72)}
+  .modal-media{position:relative;aspect-ratio:16/9;background:#2a2113 center/cover no-repeat}
+  .modal-media .playhint{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;color:#fff;background:linear-gradient(rgba(0,0,0,.12),rgba(0,0,0,.5))}
+  .modal-media .playhint .pbtn{width:62px;height:62px;border-radius:50%;background:rgba(255,255,255,.92);color:var(--ink);display:grid;place-items:center;font-size:24px;padding-left:4px}
+  .modal-media .playhint small{font-size:11.5px;opacity:.9;letter-spacing:1.5px;text-transform:uppercase}
+  .modal-media iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+  .modal-body{padding:24px 28px 30px}
+  .modal-body .mcat{color:var(--gold-deep);font-size:12.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase}
+  .modal-body h3{font-size:25px;margin:6px 0 4px;font-weight:800;line-height:1.2}
+  .modal-body .mmeta{color:var(--muted);font-size:14.5px;margin-bottom:6px}
+  .modal-body h4{font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold-deep);margin:20px 0 9px;font-weight:700}
+  .modal-body ul{list-style:none;display:flex;flex-direction:column;gap:7px}
+  .modal-body ul li{font-size:14.5px;display:flex;gap:9px;align-items:flex-start;color:var(--ink);line-height:1.5}
+  .modal-body ul li::before{content:"✓";color:var(--primary-d);font-weight:800;flex:none}
+  .modal-body ul.excl li::before{content:"✕";color:#c07a55}
+  .modal-body .mprice{margin:22px 0 2px;font-size:15px;color:var(--muted)}
+  .modal-body .mprice b{color:var(--ink);font-size:19px;margin-left:6px}
+  .modal-body .btn{width:100%;justify-content:center;margin-top:16px}
+
   @media(max-width:860px){
     .steps,.cards,.pricing{grid-template-columns:1fr}
     .why{grid-template-columns:1fr 1fr}
@@ -184,6 +214,7 @@
     .cform .frow{grid-template-columns:1fr}
     section.block{padding:60px 0}
     .hero{min-height:76vh}
+    .modal-body{padding:20px 20px 26px}
   }
 </style>
 </head>
@@ -195,14 +226,14 @@
 <section class="carousel" id="top">
   <div class="slides" id="slides">
 
-    <div class="slide" style="background-image:url('images/zhangjiajie.jpg')">
+    <div class="slide" style="background-image:url('images/shanghai-bund.jpg')">
       <div class="inner">
         <div class="cat"><span class="en">Most Popular</span></div>
-        <h2>Avatar Forest Park</h2>
-        <div class="meta">Zhangjiajie · 1 day &nbsp;·&nbsp; <b>¥800 / person</b></div>
-        <p class="desc">Bailong Elevator, Yuanjiajie, Tianzi Mountain, Ten-Mile Gallery and Golden Whip Stream — the peaks that inspired Avatar.</p>
+        <h2>Classic Shanghai Day Tour</h2>
+        <div class="meta">Shanghai · 1 day &nbsp;·&nbsp; <b>Price on request</b></div>
+        <p class="desc">The Bund, Lujiazui skyline, Shanghai Tower, Yu Garden and an evening Huangpu River cruise — the city's icons in a day.</p>
         <div class="scta">
-          <a class="btn btn-primary" href="#contact">Enquire now →</a>
+          <a class="btn btn-primary" href="#contact" data-enquire="sh-day">Enquire now →</a>
           <a class="btn btn-outline-light" href="#routes">See all tours</a>
         </div>
       </div>
@@ -212,10 +243,10 @@
       <div class="inner">
         <div class="cat"><span class="en">Featured This Month</span></div>
         <h2>Tianmen Mountain</h2>
-        <div class="meta">Zhangjiajie · 1 day &nbsp;·&nbsp; <b>¥850 / person</b></div>
+        <div class="meta">Zhangjiajie · 1 day &nbsp;·&nbsp; <b>Price on request</b></div>
         <p class="desc">Cable car, Tianmen Cave, the 999 Stairway, Guigu cliff plank road and the famous glass walkway.</p>
         <div class="scta">
-          <a class="btn btn-primary" href="#contact">Enquire now →</a>
+          <a class="btn btn-primary" href="#contact" data-enquire="zjj-tianmen">Enquire now →</a>
           <a class="btn btn-outline-light" href="#routes">See all tours</a>
         </div>
       </div>
@@ -225,10 +256,10 @@
       <div class="inner">
         <div class="cat"><span class="en">Best Value</span></div>
         <h2>Zhangjiajie in Full · 2 Days</h2>
-        <div class="meta">3 parks · 2 days &nbsp;·&nbsp; <b>¥1400 / person</b></div>
+        <div class="meta">3 parks · 2 days &nbsp;·&nbsp; <b>Price on request</b></div>
         <p class="desc">Forest Park, Tianmen Mountain and the Grand Canyon Glass Bridge — the complete Zhangjiajie experience over two days.</p>
         <div class="scta">
-          <a class="btn btn-primary" href="#contact">Enquire now →</a>
+          <a class="btn btn-primary" href="#contact" data-enquire="zjj-2day">Enquire now →</a>
           <a class="btn btn-outline-light" href="#routes">See all tours</a>
         </div>
       </div>
@@ -246,16 +277,17 @@
     <div class="section-head">
       <div class="tag">Our tours</div>
       <h2>Guided tours, all sorted for you</h2>
-      <p>Ready-to-book tours in Zhangjiajie and Shanghai — park tickets, transfers and an English-speaking guide included, so you just show up and enjoy.</p>
+      <p>Ready-to-book tours in Zhangjiajie, Shanghai and Sichuan — tickets, transfers and an English-speaking guide included, so you just show up and enjoy. Tap any tour for details.</p>
     </div>
     <div class="filterbar" id="routeFilter">
       <button class="fpill active" data-f="all">All tours</button>
       <button class="fpill" data-f="zhangjiajie">Zhangjiajie</button>
       <button class="fpill" data-f="shanghai">Shanghai</button>
+      <button class="fpill" data-f="sichuan">Sichuan</button>
     </div>
     <div class="cards">
 
-      <div class="card" data-cat="zhangjiajie">
+      <div class="card" data-cat="zhangjiajie" data-tour="zjj-forest">
         <div class="thumb" style="background-image:url('images/zhangjiajie.jpg')">
           <span class="chip">1-Day Tour</span><span class="days">1 day</span>
         </div>
@@ -263,60 +295,112 @@
           <div class="style">Zhangjiajie National Forest Park</div>
           <h3>Avatar Forest Park Highlights</h3>
           <p>Bailong Elevator · Yuanjiajie · Tianzi Mountain · Ten-Mile Gallery · Golden Whip Stream.</p>
-          <div class="incl"><b>Includes:</b> park ticket · park shuttle · hotel pick-up &amp; drop-off · English guide.<br><span class="excl">Excludes: Bailong Elevator, Tianzi cable car, mini-train.</span></div>
-          <div class="foot"><div class="from">Per person<b>¥800</b></div><a href="#contact">Enquire →</a></div>
+          <div class="incl"><b>Includes:</b> park ticket · park shuttle · hotel pick-up &amp; drop-off · English guide.</div>
+          <div class="foot"><div class="from">Price on request</div><span class="more">View details →</span></div>
         </div>
       </div>
 
-      <div class="card" data-cat="zhangjiajie">
+      <div class="card" data-cat="zhangjiajie" data-tour="zjj-tianmen">
         <div class="thumb" style="background-image:url('images/tianmen.jpg')">
           <span class="chip">1-Day Tour</span><span class="days">1 day</span>
         </div>
         <div class="body">
           <div class="style">Tianmen Mountain</div>
           <h3>Tianmen Mountain &amp; Glass Walkway</h3>
-          <p>Cable car · Tianmen Cave · 999 Stairway · Guigu cliff plank road · glass walkway · cable car.</p>
+          <p>Cable car · Tianmen Cave · 999 Stairway · Guigu cliff plank road · glass walkway.</p>
           <div class="incl"><b>Includes:</b> hotel pick-up · park ticket · round-trip cable car · park shuttle · English guide.</div>
-          <div class="foot"><div class="from">Per person<b>¥850</b></div><a href="#contact">Enquire →</a></div>
+          <div class="foot"><div class="from">Price on request</div><span class="more">View details →</span></div>
         </div>
       </div>
 
-      <div class="card" data-cat="zhangjiajie">
+      <div class="card" data-cat="zhangjiajie" data-tour="zjj-2day">
         <div class="thumb" style="background-image:url('images/glassbridge.jpg')">
           <span class="chip">2-Day Tour</span><span class="days">2 days</span>
         </div>
         <div class="body">
           <div class="style">Forest Park · Tianmen · Glass Bridge</div>
           <h3>Zhangjiajie in Full</h3>
-          <p><b>Day 1:</b> Bailong Elevator · Yuanjiajie · Tianzi Mountain · Ten-Mile Gallery.<br><b>Day 2:</b> Tianmen Mountain loop · Grand Canyon Glass Bridge.</p>
-          <div class="incl"><b>Includes:</b> 3 park tickets · park shuttles · transfers · English guide.<br><span class="excl">Excludes: Bailong Elevator, Tianzi cable car, canyon transport (5 of 7).</span></div>
-          <div class="foot"><div class="from">Per person<b>¥1400</b></div><a href="#contact">Enquire →</a></div>
+          <p><b>Day 1:</b> Forest Park highlights.<br><b>Day 2:</b> Tianmen Mountain loop · Grand Canyon Glass Bridge.</p>
+          <div class="incl"><b>Includes:</b> 3 park tickets · park shuttles · transfers · English guide.</div>
+          <div class="foot"><div class="from">Price on request</div><span class="more">View details →</span></div>
         </div>
       </div>
 
-      <div class="card" data-cat="shanghai">
-        <div class="thumb" style="background-image:url('images/shanghai-bund.jpg')">
-          <span class="chip">Express</span><span class="days">2.5 hrs</span>
-        </div>
-        <div class="body">
-          <div class="style">Shanghai · Express tour</div>
-          <h3>Shanghai in a Snapshot</h3>
-          <p>Yu Garden · City God Temple bazaar · The Bund · Lujiazui skyline — the highlights in 2.5 hours.</p>
-          <div class="incl"><b>Includes:</b> transfers · English guide.<br><span class="excl">Excludes: attraction entrance tickets.</span></div>
-          <div class="foot"><div class="from">Price on request</div><a href="#contact">Enquire →</a></div>
-        </div>
-      </div>
-
-      <div class="card" data-cat="shanghai">
+      <div class="card" data-cat="shanghai" data-tour="sh-day">
         <div class="thumb" style="background-image:url('images/shanghai-pudong.jpg')">
           <span class="chip">1-Day Tour</span><span class="days">1 day</span>
         </div>
         <div class="body">
           <div class="style">Shanghai · Full day</div>
           <h3>Classic Shanghai Day Tour</h3>
-          <p>City God Temple bazaar · The Bund · Lujiazui · Shanghai Tower · Huangpu River cruise.</p>
+          <p>City God Temple · The Bund · Lujiazui · Shanghai Tower · Huangpu River cruise.</p>
           <div class="incl"><b>Includes:</b> transfers · English guide · Shanghai Tower · Huangpu River cruise.</div>
-          <div class="foot"><div class="from">Price on request</div><a href="#contact">Enquire →</a></div>
+          <div class="foot"><div class="from">Price on request</div><span class="more">View details →</span></div>
+        </div>
+      </div>
+
+      <div class="card" data-cat="shanghai" data-tour="sh-express">
+        <div class="thumb" style="background-image:url('images/shanghai-bund.jpg')">
+          <span class="chip">Express</span><span class="days">2.5 hrs</span>
+        </div>
+        <div class="body">
+          <div class="style">Shanghai · Express tour</div>
+          <h3>Shanghai in a Snapshot</h3>
+          <p>Yu Garden · City God Temple · The Bund · Lujiazui skyline — in 2.5 hours.</p>
+          <div class="incl"><b>Includes:</b> transfers · English guide.<br><span class="excl">Excludes: attraction entrance tickets.</span></div>
+          <div class="foot"><div class="from">Price on request</div><span class="more">View details →</span></div>
+        </div>
+      </div>
+
+      <div class="card" data-cat="sichuan" data-tour="sc-leshan-emei">
+        <div class="thumb" style="background-image:url('images/leshan.jpg')">
+          <span class="chip">1-Day Tour</span><span class="days">Thu &amp; Sun</span>
+        </div>
+        <div class="body">
+          <div class="style">Sichuan · Leshan &amp; Emei</div>
+          <h3>Leshan Buddha &amp; Mount Emei</h3>
+          <p>UNESCO double feature — the Leshan Giant Buddha by boat, then Mount Emei's Golden Summit by cable car.</p>
+          <div class="incl"><b>Includes:</b> A/C vehicle · hotel pickup · English guide · admission (Emei &amp; Leshan boat).</div>
+          <div class="foot"><div class="from">Price on request</div><span class="more">View details →</span></div>
+        </div>
+      </div>
+
+      <div class="card" data-cat="sichuan" data-tour="sc-panda-leshan">
+        <div class="thumb" style="background-image:url('images/panda.jpg')">
+          <span class="chip">1-Day Tour</span><span class="days">Wed &amp; Sat</span>
+        </div>
+        <div class="body">
+          <div class="style">Sichuan · Panda &amp; Leshan</div>
+          <h3>Panda Base &amp; Leshan Buddha</h3>
+          <p>Early panda viewing, then the Leshan Giant Buddha — two World Heritage Sites in one relaxed day.</p>
+          <div class="incl"><b>Includes:</b> A/C vehicle · hotel pickup · English guide · admission.</div>
+          <div class="foot"><div class="from">Price on request</div><span class="more">View details →</span></div>
+        </div>
+      </div>
+
+      <div class="card" data-cat="sichuan" data-tour="sc-panda-dujiangyan">
+        <div class="thumb" style="background-image:url('images/dujiangyan.jpg')">
+          <span class="chip">1-Day Tour</span><span class="days">Mon &amp; Fri</span>
+        </div>
+        <div class="body">
+          <div class="style">Sichuan · Panda &amp; Dujiangyan</div>
+          <h3>Panda Base &amp; Dujiangyan</h3>
+          <p>See red pandas in the treetops, then the 2,300-year-old Dujiangyan Irrigation System (UNESCO).</p>
+          <div class="incl"><b>Includes:</b> A/C vehicle · hotel pickup · English guide · admission.</div>
+          <div class="foot"><div class="from">Price on request</div><span class="more">View details →</span></div>
+        </div>
+      </div>
+
+      <div class="card" data-cat="sichuan" data-tour="sc-panda-ticket">
+        <div class="thumb" style="background-image:url('images/panda.jpg')">
+          <span class="chip">Ticket + Guide</span><span class="days">Daily</span>
+        </div>
+        <div class="body">
+          <div class="style">Chengdu · Panda Base</div>
+          <h3>Panda Base Ticket + Commentary</h3>
+          <p>Entry ticket to the Chengdu Giant Panda Breeding Research Base + 2-hour English commentary + earpiece.</p>
+          <div class="incl"><b>Includes:</b> Panda Base ticket · 2-hour English commentary · earpiece. Meet 08:30, South Gate.</div>
+          <div class="foot"><div class="from">Price on request</div><span class="more">View details →</span></div>
         </div>
       </div>
 
@@ -406,9 +490,12 @@
         <input type="hidden" name="_subject" value="New China trip enquiry — Magic China">
         <input type="hidden" name="_template" value="table">
         <input type="text" name="_honey" style="display:none">
+        <label>Tour you're interested in
+          <input type="text" name="tour" id="fTour" placeholder="Pick a tour above, or leave blank">
+        </label>
         <div class="frow">
           <label>Name
-            <input type="text" name="name" placeholder="Your name" required>
+            <input type="text" name="name" id="fName" placeholder="Your name" required>
           </label>
           <label>Email
             <input type="email" name="email" placeholder="you@email.com" required>
@@ -422,8 +509,8 @@
             <input type="text" name="travelers" placeholder="e.g. 2 adults">
           </label>
         </div>
-        <label>Where would you like to go &amp; what do you love?
-          <textarea name="message" rows="4" placeholder="Cities, interests, budget, pace..." required></textarea>
+        <label>Anything else? (interests, budget, questions)
+          <textarea name="message" id="fMsg" rows="4" placeholder="Tell me what you'd love to see..."></textarea>
         </label>
         <button class="btn btn-primary" type="submit">Send my enquiry →</button>
         <p class="priv">Your details are only used to reply to your enquiry.</p>
@@ -443,14 +530,66 @@
   </div>
 </footer>
 
+<!-- TOUR DETAIL MODAL -->
+<div class="modal" id="tourModal" aria-hidden="true">
+  <div class="modal-card" role="dialog" aria-modal="true">
+    <button class="modal-close" id="mClose" aria-label="Close">×</button>
+    <div class="modal-media" id="mMedia"></div>
+    <div class="modal-body">
+      <div class="mcat" id="mCat"></div>
+      <h3 id="mTitle"></h3>
+      <div class="mmeta" id="mMeta"></div>
+      <div id="mNote"></div>
+      <div id="mHi"></div>
+      <div id="mInc"></div>
+      <div id="mExc"></div>
+      <div class="mprice">Price: <b>Price on request</b></div>
+      <button class="btn btn-primary" id="mEnquire">Enquire about this tour →</button>
+    </div>
+  </div>
+</div>
+
 <script>
+// ---- Tour data (add a YouTube video id to "video" to embed a real video) ----
+var TOURS = {
+  'sh-day': {cat:'Shanghai · Full Day', title:'Classic Shanghai Day Tour', meta:'Shanghai · 1 day · Price on request', img:'images/shanghai-pudong.jpg', video:'', note:'Departures daily · hotel pick-up included',
+    highlights:['Old & new Shanghai in a single day','Ascend Shanghai Tower for sweeping city views','Evening Huangpu River cruise past the illuminated skyline','Wander Yu Garden & the City God Temple bazaar'],
+    includes:['Private air-conditioned transfers','English-speaking guide','Shanghai Tower ticket','Huangpu River cruise'], excludes:[]},
+  'sh-express': {cat:'Shanghai · Express', title:'Shanghai in a Snapshot (2.5 hrs)', meta:'Shanghai · 2.5 hours · Price on request', img:'images/shanghai-bund.jpg', video:'', note:'Perfect for a layover or a quick first look',
+    highlights:['Yu Garden & City God Temple bazaar','The Bund waterfront','Lujiazui skyline viewpoint'],
+    includes:['Private transfers','English-speaking guide'], excludes:['Attraction entrance tickets']},
+  'zjj-forest': {cat:'Zhangjiajie · 1 Day', title:'Avatar Forest Park Highlights', meta:'Zhangjiajie · 1 day · Price on request', img:'images/zhangjiajie.jpg', video:'', note:'Zhangjiajie National Forest Park',
+    highlights:['Bailong Elevator to the clifftops','Yuanjiajie — the "Avatar" floating peaks','Tianzi Mountain & Ten-Mile Gallery','Golden Whip Stream valley walk'],
+    includes:['Park entrance ticket','Park shuttle bus','Hotel pick-up & drop-off (within Zhangjiajie)','English-speaking guide'],
+    excludes:['Bailong Elevator','Tianzi Mountain cable car','Mini-train']},
+  'zjj-tianmen': {cat:'Zhangjiajie · 1 Day', title:'Tianmen Mountain & Glass Walkway', meta:'Zhangjiajie · 1 day · Price on request', img:'images/tianmen.jpg', video:'', note:'',
+    highlights:['One of the world’s longest cable-car rides','Tianmen Cave & the 999 Stairway','Guigu cliff-hanging plank road','The famous glass skywalk'],
+    includes:['Hotel pick-up & drop-off','Park entrance ticket','Round-trip cable car','Park shuttle bus','English-speaking guide'], excludes:[]},
+  'zjj-2day': {cat:'Zhangjiajie · 2 Days', title:'Zhangjiajie in Full · 2 Days', meta:'3 parks · 2 days · Price on request', img:'images/glassbridge.jpg', video:'', note:'',
+    highlights:['Day 1: Bailong Elevator, Yuanjiajie, Tianzi Mountain, Ten-Mile Gallery','Day 2: Tianmen Mountain loop','Day 2: Grand Canyon Glass Bridge'],
+    includes:['3 park entrance tickets','Park shuttle buses','Transfers within Zhangjiajie','English-speaking guide'],
+    excludes:['Bailong Elevator','Tianzi Mountain cable car','Grand Canyon transport (5 of 7)']},
+  'sc-leshan-emei': {cat:'Sichuan · Thu & Sun', title:'Leshan Giant Buddha & Mount Emei Day Tour', meta:'Sichuan · 1 day · Price on request', img:'images/leshan.jpg', video:'', note:'Tour dates: every Thursday & Sunday',
+    highlights:['UNESCO double feature — the essence of Leshan in one day','Glide by boat along the Min River for a unique angle on the Buddha','Ride a cable car to the Golden Summit of Mount Emei'],
+    includes:['Air-conditioned vehicle','Hotel pickup','English-speaking guide','Admission: Mount Emei tickets & Leshan boat'], excludes:[]},
+  'sc-panda-leshan': {cat:'Sichuan · Wed & Sat', title:'Panda Base & Leshan Buddha & Sichuan Delights', meta:'Sichuan · 1 day · Price on request', img:'images/panda.jpg', video:'', note:'Tour dates: every Wednesday & Saturday',
+    highlights:['Early panda viewing to beat the crowds','Two of China’s most iconic World Heritage Sites in one day','Effortless sightseeing — no strenuous climbing'],
+    includes:['Air-conditioned vehicle','Hotel pickup','English-speaking guide','Admission fees'], excludes:[]},
+  'sc-panda-dujiangyan': {cat:'Sichuan · Mon & Fri', title:'Panda Base & Dujiangyan Day Tour', meta:'Sichuan · 1 day · Price on request', img:'images/dujiangyan.jpg', video:'', note:'Tour dates: every Monday & Friday',
+    highlights:['Spot rare red pandas in the treetops','Marvel at the ancient Dujiangyan Irrigation System (UNESCO)','Discover this 2,300-year-old engineering marvel'],
+    includes:['Air-conditioned vehicle','Hotel pickup','English-speaking guide','Admission fees'], excludes:[]},
+  'sc-panda-ticket': {cat:'Chengdu · Daily', title:'Chengdu Panda Base Ticket + English Commentary', meta:'Chengdu · daily 08:30 · Price on request', img:'images/panda.jpg', video:'', note:'Departures daily · meeting point: South Gate of Chengdu Panda Base · 08:30',
+    highlights:['Entry ticket to the Chengdu Giant Panda Breeding Research Base','2-hour English commentary','Earpiece included'],
+    includes:['Panda Base entry ticket','2-hour English commentary','Earpiece'], excludes:[]}
+};
+
+// ---- Carousel ----
 (function(){
   var track=document.getElementById('slides');
   var slides=track?track.children:[];
   var n=slides.length, i=0, timer=null;
   var dotsWrap=document.getElementById('cDots');
   if(!track||!n) return;
-  // build dots
   for(var d=0;d<n;d++){(function(k){var b=document.createElement('button');b.addEventListener('click',function(){go(k);reset();});dotsWrap.appendChild(b);})(d);}
   var dots=dotsWrap.children;
   function render(){track.style.transform='translateX('+(-i*100)+'%)';for(var k=0;k<n;k++){dots[k].className=(k===i?'active':'');}}
@@ -462,13 +601,12 @@
   document.getElementById('cNext').addEventListener('click',function(){next();reset();});
   document.getElementById('cPrev').addEventListener('click',function(){prev();reset();});
   render();start();
-  // basic touch swipe
   var x0=null;
   track.addEventListener('touchstart',function(e){x0=e.touches[0].clientX;},{passive:true});
   track.addEventListener('touchend',function(e){if(x0===null)return;var dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>40){dx<0?next():prev();reset();}x0=null;},{passive:true});
 })();
 
-// Route filter
+// ---- Route filter ----
 (function(){
   var bar=document.getElementById('routeFilter');
   if(!bar) return;
@@ -484,6 +622,62 @@
       cards[c].style.display=show?'':'none';
     }
   });
+})();
+
+// ---- Detail modal + enquiry pre-fill ----
+(function(){
+  var modal=document.getElementById('tourModal');
+  var current=null;
+  function list(items, cls){
+    if(!items||!items.length) return '';
+    var h='<ul'+(cls?' class="'+cls+'"':'')+'>';
+    for(var i=0;i<items.length;i++){ h+='<li>'+items[i]+'</li>'; }
+    return h+'</ul>';
+  }
+  function openModal(id){
+    var t=TOURS[id]; if(!t) return; current=id;
+    var media=document.getElementById('mMedia');
+    if(t.video){
+      media.style.backgroundImage='';
+      media.innerHTML='<iframe src="https://www.youtube.com/embed/'+t.video+'" title="'+t.title+'" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+    }else{
+      media.style.backgroundImage="url('"+t.img+"')";
+      media.innerHTML='<div class="playhint"><div class="pbtn">▶</div><small>Video coming soon</small></div>';
+    }
+    document.getElementById('mCat').textContent=t.cat;
+    document.getElementById('mTitle').textContent=t.title;
+    document.getElementById('mMeta').textContent=t.meta;
+    document.getElementById('mNote').innerHTML = t.note ? '<div class="mmeta">'+t.note+'</div>' : '';
+    document.getElementById('mHi').innerHTML  = (t.highlights&&t.highlights.length)?('<h4>Highlights</h4>'+list(t.highlights)):'';
+    document.getElementById('mInc').innerHTML = (t.includes&&t.includes.length)?('<h4>What’s included</h4>'+list(t.includes)):'';
+    document.getElementById('mExc').innerHTML = (t.excludes&&t.excludes.length)?('<h4>Not included</h4>'+list(t.excludes,'excl')):'';
+    modal.classList.add('open'); modal.setAttribute('aria-hidden','false');
+    document.body.style.overflow='hidden';
+  }
+  function closeModal(){ modal.classList.remove('open'); modal.setAttribute('aria-hidden','true'); document.body.style.overflow=''; }
+  function enquire(id){
+    var t=TOURS[id]; if(!t) return;
+    var tour=document.getElementById('fTour'); var msg=document.getElementById('fMsg');
+    if(tour) tour.value=t.title;
+    if(msg && !msg.value.trim()){ msg.value='I’d like details and a quote for the "'+t.title+'" tour.'; }
+    closeModal();
+    var c=document.getElementById('contact'); if(c) c.scrollIntoView({behavior:'smooth'});
+    setTimeout(function(){ var f=document.getElementById('fName'); if(f) f.focus(); }, 450);
+  }
+  // open modal when a card is clicked
+  var cards=document.querySelectorAll('#routes .card[data-tour]');
+  for(var i=0;i<cards.length;i++){
+    (function(card){ card.addEventListener('click',function(){ openModal(card.getAttribute('data-tour')); }); })(cards[i]);
+  }
+  // carousel "Enquire now" buttons pre-fill directly
+  var eb=document.querySelectorAll('[data-enquire]');
+  for(var j=0;j<eb.length;j++){
+    (function(btn){ btn.addEventListener('click',function(e){ e.preventDefault(); enquire(btn.getAttribute('data-enquire')); }); })(eb[j]);
+  }
+  document.getElementById('mEnquire').addEventListener('click',function(){ enquire(current); });
+  document.getElementById('mClose').addEventListener('click',closeModal);
+  modal.addEventListener('click',function(e){ if(e.target===modal) closeModal(); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') closeModal(); });
 })();
 </script>
 
