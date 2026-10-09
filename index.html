@@ -46,7 +46,8 @@
 
   /* TOP NAV */
   header{position:sticky;top:0;z-index:60;background:rgba(239,231,214,.94);border-bottom:1px solid #ddd0b8;backdrop-filter:blur(8px)}
-  .nav{display:flex;align-items:center;justify-content:flex-start;gap:48px;height:66px;max-width:var(--max);margin:0 auto;padding:0 24px}
+  .nav{display:flex;align-items:center;justify-content:flex-start;gap:40px;height:66px;padding:0 36px}
+  @media(max-width:860px){.nav{padding:0 20px}}
   .nav .brand{font-family:'Cormorant Garamond',serif;font-size:23px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--ink)}
   .nav .brand span{color:var(--primary-d)}
   .nav .links{display:flex;gap:32px;align-items:center}
@@ -178,6 +179,18 @@
   .qr{position:relative;width:168px;height:168px;background:#faf6ec;border:1px solid var(--line);border-radius:14px;display:grid;place-items:center;overflow:hidden}
   .qr .ph{position:absolute;text-align:center;color:var(--muted);font-size:12px;line-height:1.5;padding:10px}
   .qr img{position:relative;z-index:1;width:148px;height:148px;object-fit:contain;background:#fff;border-radius:8px}
+  /* CONTACT PEOPLE */
+  .people{display:flex;flex-direction:column;gap:16px}
+  .person{display:flex;gap:16px;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:var(--shadow)}
+  .person .avatar{width:68px;height:68px;border-radius:50%;object-fit:cover;flex:none;background:#efe3c8;border:1px solid var(--line)}
+  .person .pinfo{min-width:0}
+  .person .pinfo h4{font-size:17px;margin-bottom:1px}
+  .person .pinfo .role{color:var(--muted);font-size:12.5px;margin-bottom:9px}
+  .person .pinfo>a{display:inline-flex;align-items:center;gap:6px;color:var(--ink);font-weight:600;font-size:14.5px;word-break:break-all}
+  .person .pinfo>a:hover{color:var(--primary-d)}
+  .person .qr-sm{margin-top:12px;display:flex;align-items:center;gap:12px}
+  .person .qr-sm img{width:90px;height:90px;object-fit:contain;border:1px solid var(--line);border-radius:10px;background:#fff;flex:none}
+  .person .qr-sm span{font-size:12px;color:var(--muted)}
 
   .cform{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:30px;box-shadow:var(--shadow);border-top:4px solid var(--primary)}
   .cform h3{font-size:21px;margin-bottom:6px}
@@ -215,6 +228,12 @@
   .modal-media .playhint .pbtn{width:62px;height:62px;border-radius:50%;background:rgba(255,255,255,.92);color:var(--ink);display:grid;place-items:center;font-size:24px;padding-left:4px}
   .modal-media .playhint small{font-size:11.5px;opacity:.9;letter-spacing:1.5px;text-transform:uppercase}
   .modal-media iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+  .mgal{position:absolute;inset:0}
+  .mslide{position:absolute;inset:0;background:center/cover no-repeat;opacity:0;transition:opacity .7s ease}
+  .mslide.on{opacity:1}
+  .mdots{position:absolute;bottom:12px;left:0;right:0;z-index:2;display:flex;gap:7px;justify-content:center}
+  .mdots span{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.55)}
+  .mdots span.on{background:#fff}
   .modal-body{padding:24px 28px 30px}
   .modal-body .mcat{color:var(--gold-deep);font-size:12.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase}
   .modal-body h3{font-size:25px;margin:6px 0 4px;font-weight:800;line-height:1.2}
@@ -559,21 +578,24 @@
       <div class="contact-intro">
         <h2 class="serif">Ready to explore China?</h2>
         <p>Tell me your dates and what you'd love to see. I'll reply with a plan and a quote — no commitment.</p>
-        <div class="contact-alt">
-          <a href="mailto:jajanatalia1@gmail.com">
-            <span class="ic">✉️</span>
-            <span>jajanatalia1@gmail.com<small>Email me anytime</small></span>
-          </a>
-          <a href="mailto:15028383508@163.com">
-            <span class="ic">✉️</span>
-            <span>15028383508@163.com<small>Email me anytime</small></span>
-          </a>
-        </div>
-        <div class="wechat">
-          <div class="wechat-title">💬 Scan to add me on WeChat</div>
-          <div class="qrs">
-            <div class="qr"><span class="ph">wechat-1.png</span><img src="images/wechat-1.png" alt="WeChat QR code" onerror="this.remove()"></div>
-            <div class="qr"><span class="ph">wechat-2.png</span><img src="images/wechat-2.png" alt="WeChat QR code" onerror="this.remove()"></div>
+        <div class="people">
+          <div class="person">
+            <img class="avatar" src="images/avatar-1.jpg" alt="" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%2080%2080%22%3E%3Crect%20width=%2280%22%20height=%2280%22%20fill=%22%23efe3c8%22/%3E%3Ccircle%20cx=%2240%22%20cy=%2232%22%20r=%2214%22%20fill=%22%23cbb98f%22/%3E%3Cpath%20d=%22M16%2070c0-13%2010-20%2024-20s24%207%2024%2020z%22%20fill=%22%23cbb98f%22/%3E%3C/svg%3E'">
+            <div class="pinfo">
+              <h4>Natalia</h4>
+              <div class="role">Travel consultant</div>
+              <a href="mailto:jajanatalia1@gmail.com">✉️ jajanatalia1@gmail.com</a>
+              <div class="qr-sm"><img src="images/wechat-1.png" alt="WeChat QR" onerror="this.remove()"><span>Scan to add on WeChat</span></div>
+            </div>
+          </div>
+          <div class="person">
+            <img class="avatar" src="images/avatar-2.jpg" alt="" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%2080%2080%22%3E%3Crect%20width=%2280%22%20height=%2280%22%20fill=%22%23efe3c8%22/%3E%3Ccircle%20cx=%2240%22%20cy=%2232%22%20r=%2214%22%20fill=%22%23cbb98f%22/%3E%3Cpath%20d=%22M16%2070c0-13%2010-20%2024-20s24%207%2024%2020z%22%20fill=%22%23cbb98f%22/%3E%3C/svg%3E'">
+            <div class="pinfo">
+              <h4>Travel consultant</h4>
+              <div class="role">Travel consultant</div>
+              <a href="mailto:15028383508@163.com">✉️ 15028383508@163.com</a>
+              <div class="qr-sm"><img src="images/wechat-2.png" alt="WeChat QR" onerror="this.remove()"><span>Scan to add on WeChat</span></div>
+            </div>
           </div>
         </div>
       </div>
@@ -759,7 +781,28 @@ var TOURS = {
 // ---- Detail modal + enquiry pre-fill ----
 (function(){
   var modal=document.getElementById('tourModal');
-  var current=null;
+  var current=null, galTimer=null;
+  var GALLERIES={
+    zjj:['images/zhangjiajie.jpg','images/tianmen.jpg','images/glassbridge.jpg'],
+    sh:['images/shanghai-bund.jpg','images/shanghai-pudong.jpg'],
+    sc:['images/panda.jpg','images/leshan.jpg','images/dujiangyan.jpg'],
+    bj:['images/bj-forbidden.jpg','images/bj-greatwall.jpg','images/bj-tiantan.jpg','images/bj-summerpalace.jpg','images/bj-gubei.jpg','images/bj-hutong.jpg']
+  };
+  function photosFor(id,img){
+    var set=GALLERIES[id.split('-')[0]]||[], out=[img];
+    for(var i=0;i<set.length;i++){ if(out.indexOf(set[i])<0) out.push(set[i]); }
+    return out.slice(0,5);
+  }
+  function startGallery(media,n){
+    if(galTimer){clearInterval(galTimer);galTimer=null;}
+    if(n<=1) return;
+    var slides=media.querySelectorAll('.mslide'), dots=media.querySelectorAll('.mdots span'), idx=0;
+    galTimer=setInterval(function(){
+      slides[idx].classList.remove('on'); if(dots[idx])dots[idx].classList.remove('on');
+      idx=(idx+1)%n;
+      slides[idx].classList.add('on'); if(dots[idx])dots[idx].classList.add('on');
+    },3000);
+  }
   function list(items, cls){
     if(!items||!items.length) return '';
     var h='<ul'+(cls?' class="'+cls+'"':'')+'>';
@@ -769,13 +812,13 @@ var TOURS = {
   function openModal(id){
     var t=TOURS[id]; if(!t) return; current=id;
     var media=document.getElementById('mMedia');
-    if(t.video){
-      media.style.backgroundImage='';
-      media.innerHTML='<iframe src="https://www.youtube.com/embed/'+t.video+'" title="'+t.title+'" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
-    }else{
-      media.style.backgroundImage="url('"+t.img+"')";
-      media.innerHTML='<div class="playhint"><div class="pbtn">▶</div><small>Video coming soon</small></div>';
-    }
+    media.style.backgroundImage='';
+    var photos=photosFor(id,t.img), gh='<div class="mgal">';
+    for(var gi=0;gi<photos.length;gi++){ gh+='<div class="mslide'+(gi===0?' on':'')+'" style="background-image:url(\''+photos[gi]+'\')"></div>'; }
+    gh+='</div>';
+    if(photos.length>1){ gh+='<div class="mdots">'; for(var gd=0;gd<photos.length;gd++){ gh+='<span'+(gd===0?' class="on"':'')+'></span>'; } gh+='</div>'; }
+    media.innerHTML=gh;
+    startGallery(media,photos.length);
     document.getElementById('mCat').textContent=t.cat;
     document.getElementById('mTitle').textContent=t.title;
     document.getElementById('mMeta').textContent=t.meta;
@@ -786,7 +829,7 @@ var TOURS = {
     modal.classList.add('open'); modal.setAttribute('aria-hidden','false');
     document.body.style.overflow='hidden';
   }
-  function closeModal(){ modal.classList.remove('open'); modal.setAttribute('aria-hidden','true'); document.body.style.overflow=''; }
+  function closeModal(){ if(galTimer){clearInterval(galTimer);galTimer=null;} modal.classList.remove('open'); modal.setAttribute('aria-hidden','true'); document.body.style.overflow=''; }
   function enquire(id){
     var t=TOURS[id]; if(!t) return;
     var tour=document.getElementById('fTour'); var msg=document.getElementById('fMsg');
